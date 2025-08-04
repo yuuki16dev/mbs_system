@@ -5,32 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ホーム画面</title>
     <link rel="stylesheet" href="styles.css">  <!-- 共通のCSSファイル -->
-    <style>
-        
-
-        /* ハンバーガーメニューアイコンのスタイル */
-        .hamburger {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 6px; /* 間隔を少し広く */
-            cursor: pointer;
-            z-index: 1001; /* メニューより前に表示 */
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .hamburger div {
-            width: 30px;
-            height: 4px;
-            background-color: #333;
-            border-radius: 5px;
-            transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
-        }
-
-
-    </style>
 </head>
 <body>
 

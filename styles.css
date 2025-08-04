@@ -55,6 +55,7 @@ body {
     gap: 6px;
     cursor: pointer;
     z-index: 1001; /* メニューより前に表示 */
+    transition: transform 0.3s ease-in-out;
 }
 
 .hamburger div {
