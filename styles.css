@@ -1,0 +1,127 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.home-title {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+.button-container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.button-container a {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px 40px;
+    font-size: 24px;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+    width: auto;
+}
+
+.button-container a.custom-width {
+    width: 300px;
+}
+
+.button-container a:hover {
+    background-color: #45a049;
+}
+
+.hamburger {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    z-index: 1001; /* メニューより前に表示 */
+}
+
+.hamburger div {
+    width: 30px;
+    height: 4px;
+    background-color: #333;
+    border-radius: 5px;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.hamburger.open div:nth-child(1) {
+    transform: translateY(10px) rotate(45deg); /* 上の線を右上に回転 */
+}
+
+.hamburger.open div:nth-child(2) {
+    opacity: 0; /* 中央の線を非表示に */
+}
+
+.hamburger.open div:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg); /* 下の線を左下に回転 */
+}
+
+.nav-menu {
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    z-index: 1000;
+    transform: translateX(100%); /* 初期状態ではメニューを右に隠す */
+    transition: transform 0.3s ease-in-out;
+}
+
+.nav-menu.show {
+    display: flex;
+    transform: translateX(0); /* メニューをスライドイン */
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-menu a:hover {
+    background-color: #f1f1f1;
+}
+
+/* 戻るボタンのスタイル（共通化） */
+.back-button {
+    text-decoration: none;
+    padding: 5px 10px;  /* 戻るボタンを小さくする */
+    font-size: 14px;  /* フォントサイズを小さく */
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+.back-button:hover {
+    background-color: #45a049;
+}
+
+
