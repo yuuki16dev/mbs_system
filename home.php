@@ -35,3 +35,4 @@
     <script src="script.js"></script>  <!-- 共通のJavaScriptファイル -->
 </body>
 </html>
+テスト
