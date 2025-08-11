@@ -132,21 +132,21 @@ $displayNotes = array_slice($filteredDeliveryNotes, $startIndex, $perPage);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>納品書一覧</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css"> 
     <style>
         /* CSSスタイル */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #fff;
+        body { 
+            font-family: Arial, sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            background-color: #fff; 
         }
 
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 15px 0;
-            text-align: center;
+        header { 
+            background-color: #333; 
+            color: #fff; 
+            padding: 15px 0; 
+            text-align: center; 
         }
 
         .home-title { font-size: 28px;
@@ -154,7 +154,6 @@ $displayNotes = array_slice($filteredDeliveryNotes, $startIndex, $perPage);
             top: 10px;
             left: 20px;
         }
-
         main {
             width: 90%;
             margin: 20px auto;
@@ -163,6 +162,7 @@ $displayNotes = array_slice($filteredDeliveryNotes, $startIndex, $perPage);
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
         }
+ 
         .search-bar {
             margin: 0 auto;
             width: 80%;
@@ -205,24 +205,18 @@ $displayNotes = array_slice($filteredDeliveryNotes, $startIndex, $perPage);
             background-color: #0056b3;
         }
 
+ 
         table {
             border-collapse: collapse;
             width: 90%;
             margin: 20px 0;
             background-color: #fff;
         }
-
-        table,th,td {border: 1px solid #ddd;}
-
-        th,td {padding: 10px;text-align: center;}
-
-        th {background-color: #f2f2f2;}
-
-        .pagination {
-            text-align: center;
-            margin-top: 10px;
-        }
-
+        table, th, td { border: 1px solid #ddd; }
+        th, td { padding: 10px; text-align: center; }
+        th { background-color: #f2f2f2; }
+ 
+        .pagination { text-align: center; margin-top: 10px; }
         .pagination button {
             margin: 0 10px;
             padding: 6px 12px;
@@ -232,11 +226,7 @@ $displayNotes = array_slice($filteredDeliveryNotes, $startIndex, $perPage);
             border-radius: 4px;
             cursor: pointer;
         }
-
-        .pagination button:hover {
-            background-color: #555;
-        }
-
+        .pagination button:hover { background-color: #555; }
         .back-button {
             position: fixed;
             bottom: 20px;
@@ -260,38 +250,31 @@ $displayNotes = array_slice($filteredDeliveryNotes, $startIndex, $perPage);
             color: #ffffff;
         }
 
-        /* ソート可能な見出しのスタイル */
+
+
+
+
+                /* ソート可能な見出しのスタイル */
         .sortable {
             cursor: pointer;
-            position: relative;
-            /* ソートアイコンの位置調整のため */
+            position: relative; /* ソートアイコンの位置調整のため */
             /*display: flex;  テキストとアイコンを横並びにする */
-            justify-content: center;
-            /* 中央揃え */
-            align-items: center;
-            /* 垂直方向中央揃え */
-            padding-right: 20px;
-            /* アイコン分のスペースを確保 */
-            white-space: nowrap;
-            /* テキストとアイコンが改行されないように */
+            justify-content: center; /* 中央揃え */
+            align-items: center; /* 垂直方向中央揃え */
+            padding-right: 20px; /* アイコン分のスペースを確保 */
+            white-space: nowrap; /* テキストとアイコンが改行されないように */
         }
 
         .sort-icon {
             position: absolute;
-            right: 5px;
-            /* 右端からの距離 */
+            right: 5px; /* 右端からの距離 */
             top: 50px;
-            font-size: 20px;
-            /* アイコンのサイズ */
-            color: black;
-            /* デフォルトの色 */
+            font-size: 20px; /* アイコンのサイズ */
+            color: black; /* デフォルトの色 */
             /* transformとtransitionはテキスト切り替えのため削除 */
-            top: 50%;
-            /* 親要素の中心に配置 */
-            display: block;
-            /* 確実な表示のため */
-            line-height: 1;
-            /* アイコンの行高さを調整 */
+            top: 50%; /* 親要素の中心に配置 */
+            display: block; /* 確実な表示のため */
+            line-height: 1; /* アイコンの行高さを調整 */
         }
 
         input[type="date"] {
@@ -300,7 +283,7 @@ $displayNotes = array_slice($filteredDeliveryNotes, $startIndex, $perPage);
             border-radius: 4px;
             border: 1px solid #ccc;
         }
-
+      
         /* No.列 */
         table th:nth-child(1),
         table td:nth-child(1) {
@@ -323,9 +306,12 @@ $displayNotes = array_slice($filteredDeliveryNotes, $startIndex, $perPage);
         }
 
         table {
-            margin-left: auto;
-            margin-right: auto;
+        margin-left: auto;
+        margin-right: auto;
         }
+
+
+
 
         .search-bar input[type="text"],
         .search-bar button {
