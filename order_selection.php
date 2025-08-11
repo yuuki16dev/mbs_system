@@ -345,7 +345,7 @@ document.getElementById('confirmBtn').addEventListener('click', function() {
   localStorage.setItem('order_selected', JSON.stringify({ name: customerName, no: customerNo, details: selectedDetails }));
   // 注文明細Noと顧客NoをGETで渡す（選択された明細のみ）
   const selectedDetailIds = selectedDetails.map(d => d.order_detail_id);
-  location.href = 'nouhinsakusei.php?order_ids=' + encodeURIComponent(selectedDetailIds.join(',')) + '&customer_no=' + encodeURIComponent(customerNo);
+  location.href = 'delivery_create.php?order_ids=' + encodeURIComponent(selectedDetailIds.join(',')) + '&customer_no=' + encodeURIComponent(customerNo);
 });
 </script>
 </main>

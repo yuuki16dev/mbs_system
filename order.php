@@ -24,7 +24,7 @@
     <!-- ナビゲーションメニュー -->
     <div class="nav-menu" id="navMenu">
         <a href="home.php">ホーム画面</a>
-        <a href="nouhin.php">納品書</a>
+        <a href="delivery.php">納品書</a>
         <a href="toukei.php">統計情報</a>
         <a href="kokyaku.php">顧客情報管理</a>
     </div>
