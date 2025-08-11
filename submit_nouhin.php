@@ -92,7 +92,7 @@ try {
 
     // 登録成功後に納品一覧画面へリダイレクト
     // 成功したことを伝えるクエリパラメータを付与
-    header("Location: nouhinitiran.php?success=1");
+    header("Location: delivery_list.php?success=1");
     exit;
 
 } catch (Exception $e) {
@@ -120,6 +120,6 @@ try {
 ?>
 
 <!--
-[PROMPT_SUGGESTION]nouhinitiran.php で登録した納品データを表示するにはどうすれば良いですか？[/PROMPT_SUGGESTION]
+[PROMPT_SUGGESTION]delivery_list.php で登録した納品データを表示するにはどうすれば良いですか？[/PROMPT_SUGGESTION]
 [PROMPT_SUGGESTION]注文選択画面で選択された注文IDと注文詳細IDを、納品明細に登録できるようにしてください。[/PROMPT_SUGGESTION]
 -->

@@ -50,7 +50,7 @@ try {
     $pdo->commit();
 
     // 登録成功後に注文一覧画面へリダイレクト
-    header("Location: tyuumon.php?success=1");
+    header("Location: order.php?success=1");
     exit;
 
 } catch (Exception $e) {

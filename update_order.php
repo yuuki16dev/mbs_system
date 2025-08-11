@@ -5,7 +5,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    header('Location: tyuumonitiran.php');
+    header('Location: order_list.php');
     exit;
 }
 
@@ -15,7 +15,7 @@ if (!$orderId) {
     $orderId = isset($_POST['order_id']) ? (int)$_POST['order_id'] : null;
 }
 if (!$orderId) {
-    header('Location: tyuumonitiran.php');
+    header('Location: order_list.php');
     exit;
 }
 
@@ -89,12 +89,12 @@ try {
     }
     $pdo->commit();
     // 更新後は注文表示画面へ
-    header('Location: tyuumonhyouji.php?no=' . $orderId);
+    header('Location: order_display.php?no=' . $orderId);
     exit;
 } catch (Exception $e) {
     if (isset($pdo) && $pdo->inTransaction()) {
         $pdo->rollBack();
     }
-    header('Location: tyuumonhyouji.php?no=' . $orderId . '&error=1');
+    header('Location: order_display.php?no=' . $orderId . '&error=1');
     exit;
 }
