@@ -433,7 +433,7 @@ $displayNotes = array_slice($filteredDeliveryNotes, $startIndex, $perPage);
             </div>
         </form>
     </main>
-    <a href="nouhin.php" class="back-button">戻る</a>
+    <a href="delivery.php" class="back-button">戻る</a>
     <div class="modal" id="confirmationModal">
         <div class="modal-content"></div>
     </div>
