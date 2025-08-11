@@ -719,7 +719,7 @@ function saveOrderAndMove() {
   localStorage.setItem('order_customer', JSON.stringify({ name, no, orderDate, items }));
   // 顧客名・Noをcustomer_name/customer_noでGETパラメータとして渡して遷移
   const params = new URLSearchParams({ customer_name: name, customer_no: no });
-  location.href = 'tyuumonsentaku.php?' + params.toString();
+  location.href = 'order_selection.php?' + params.toString();
 }
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -827,7 +827,7 @@ function showBackModal() {
     modal.style.display = 'flex';
   } else {
     // 情報がない場合は確認なしで即遷移
-    location.href = 'nouhin.php?reset=1';
+    location.href = 'delivery.php?reset=1';
   }
 }
 function hideBackModal() {
@@ -856,7 +856,7 @@ function confirmBack() {
   document.getElementsByName('tax_amount')[0].value = '';
   document.getElementsByName('total_with_tax')[0].value = '';
   // 破棄後に遷移
-  location.href = 'nouhin.php?reset=1';
+  location.href = 'delivery.php?reset=1';
 }
 function isFormDirty() {
   const itemNames = document.getElementsByName('item_name[]');

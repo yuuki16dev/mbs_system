@@ -11,21 +11,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $stmt = $pdo->prepare('UPDATE delivery_details SET return_flag = 1 WHERE delivery_id = ?');
             $stmt->execute([$deliveryId]);
             // 完了後、納品一覧画面へリダイレクト（必ず遷移）
-            header('Location: nouhinitiran.php');
+            header('Location: delivery_list.php');
             exit;
         } catch (Exception $e) {
             // エラー時も納品一覧画面に遷移
-            header('Location: nouhinitiran.php');
+            header('Location: delivery_list.php');
             exit;
         }
     } else {
         // 不正リクエスト時も納品一覧画面に遷移
-        header('Location: nouhinitiran.php');
+        header('Location: delivery_list.php');
         exit;
     }
 } else {
     // POST以外も納品一覧画面に遷移
-    header('Location: nouhinitiran.php');
+    header('Location: delivery_list.php');
     exit;
 }
 ?>

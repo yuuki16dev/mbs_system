@@ -335,7 +335,7 @@ if ($deliveryId) {
             </table>
 
             <div class="control-buttons">
-                <button onclick="location.href='nouhin_henshu.php?no=<?php echo $delivery['no']; ?>'">編集</button>
+                <button onclick="location.href='delivery_edit.php?no=<?php echo $delivery['no']; ?>'">編集</button>
                 <form id="deleteDeliveryForm" method="post" action="update_delivery.php" style="margin:0;">
                     <input type="hidden" name="delivery_id" value="<?php echo htmlspecialchars($delivery['no']); ?>">
                     <input type="hidden" name="delete_flag" value="1">
@@ -351,7 +351,7 @@ if ($deliveryId) {
             </div>
 
         <?php endif; ?>
-        <a href="nouhinitiran.php" class="back-button">戻る</a>
+        <a href="delivery_list.php" class="back-button">戻る</a>
         <div class="modal" id="confirmationModal">
     </main>
 

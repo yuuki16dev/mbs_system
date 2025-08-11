@@ -1,5 +1,5 @@
 <!-- ============================= -->
-<!-- nouhin_henshu.php : 納品書編集画面 -->
+<!-- delivery_edit.php : 納品書編集画面 -->
 <!-- ============================= -->
 <?php
 // --- 納品ID取得 ---
@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delivery_id'])) {
         }
     }
     // 編集後は納品表示画面へリダイレクト
-    header('Location: nouhinhyouji.php?no=' . $deliveryId);
+    header('Location: delivery_display.php?no=' . $deliveryId);
     exit;
 }
 
@@ -67,7 +67,7 @@ if ($deliveryId) {
     <title>納品書編集</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* ...nouhinsakusei.phpのスタイルをそのまま流用... */
+        /* ...delivery_create.phpのスタイルをそのまま流用... */
         /* 基本スタイル */
     .menu-button {
         font-size: 24px;
@@ -347,7 +347,7 @@ if ($deliveryId) {
     <?php include('navbar.php'); ?>
     <main>
         <!-- 納品編集フォーム（既存データを編集） -->
-        <form id="orderEditForm" method="post" action="nouhin_henshu.php">
+        <form id="orderEditForm" method="post" action="delivery_edit.php">
             <!-- hidden: 納品ID（編集・削除時に使用） -->
             <input type="hidden" name="delivery_id" value="<?= htmlspecialchars($deliveryId) ?>">
             <input type="hidden" name="delete_flag" id="delete_flag" value="0">
@@ -399,7 +399,7 @@ if ($deliveryId) {
             <div class="button-container">
                 <button type="button" class="button" onclick="showModal()">保存</button>
                 <!-- 注文選択画面へ遷移するボタン（保存ボタンの下・同じ大きさ） -->
-                <button type="button" class="button" style="margin-top:16px;" onclick="location.href='tyuumonsentaku.php'">注文選択</button>
+                <button type="button" class="button" style="margin-top:16px;" onclick="location.href='order_selection.php'">注文選択</button>
             </div>
         </form>
     </main>
@@ -483,12 +483,12 @@ if ($deliveryId) {
                 if (confirm('入力内容が破棄されます。よろしいですか？')) {
                     const params = new URLSearchParams();
                     params.set('no', <?= json_encode($deliveryId) ?>);
-                    window.location.href = 'nouhinhyouji.php?' + params.toString();
+                    window.location.href = 'delivery_display.php?' + params.toString();
                 }
             } else {
                 const params = new URLSearchParams();
                 params.set('no', <?= json_encode($deliveryId) ?>);
-                window.location.href = 'nouhinhyouji.php?' + params.toString();
+                window.location.href = 'delivery_display.php?' + params.toString();
             }
         }
 

@@ -1,5 +1,5 @@
 <!-- ============================= -->
-<!-- tyuumon_henshu.php : 注文書編集画面 -->
+<!-- order_edit.php : 注文書編集画面 -->
 <!-- ============================= -->
 <!DOCTYPE html>
 <html lang="ja">
@@ -9,7 +9,7 @@
     <title>注文書編集</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* ...tyuumonsakusei.phpのスタイルをそのまま流用... */
+        /* ...order_create.phpのスタイルをそのまま流用... */
         /* 基本スタイル */
     .menu-button {
         font-size: 24px;
@@ -380,7 +380,7 @@
         </form>
     </main>
     <!-- 戻るボタン -->
-    <a href="tyuumonhyouji.php" class="back-button">戻る</a>
+    <a href="order_display.php" class="back-button">戻る</a>
     <!-- 保存確認モーダル -->
     <div class="modal" id="confirmationModal" style="display:none;">
         <div class="modal-content">
@@ -406,7 +406,7 @@
         // --- モーダル「はい」ボタンでフォーム送信 ---
         function submitForm() {
             document.getElementById('orderEditForm').submit();
-            // window.location.href = 'tyuumonhyouji.php'; // ここで遷移させるとPOSTが無効化されるため削除
+            // window.location.href = 'order_display.php'; // ここで遷移させるとPOSTが無効化されるため削除
         }
         // --- 数量欄の先頭ゼロを除去 ---
         function removeLeadingZero(input) {
@@ -489,9 +489,9 @@
                 document.getElementById('backYesBtn').onclick = function() {
                     document.getElementById('orderEditForm').reset();
                     if (orderId && orderId !== "0") {
-                        window.location.href = 'tyuumonhyouji.php?no=' + encodeURIComponent(orderId);
+                        window.location.href = 'order_display.php?no=' + encodeURIComponent(orderId);
                     } else {
-                        window.location.href = 'tyuumonhyouji.php';
+                        window.location.href = 'order_display.php';
                     }
                     modal.remove();
                 };
@@ -500,9 +500,9 @@
                 };
             } else {
                 if (orderId && orderId !== "0") {
-                    window.location.href = 'tyuumonhyouji.php?no=' + encodeURIComponent(orderId);
+                    window.location.href = 'order_display.php?no=' + encodeURIComponent(orderId);
                 } else {
-                    window.location.href = 'tyuumonhyouji.php';
+                    window.location.href = 'order_display.php';
                 }
             }
         });

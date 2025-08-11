@@ -344,7 +344,7 @@
         </form>
     </main>
 
-    <a href="tyuumon.php" class="back-button">戻る</a>
+    <a href="order.php" class="back-button">戻る</a>
     <div class="modal" id="confirmationModal" style="display:none;">
         <div class="modal-content">
             <p>本当に作成しますか？</p>
@@ -359,7 +359,7 @@
 
     <script>
     // =============================
-    // 注文作成画面 tyuumonsakusei.php
+    // 注文作成画面 order_create.php
     // =============================
 
     // --- 合計数量・金額を自動計算する関数 ---
@@ -497,7 +497,7 @@
             document.body.appendChild(modal);
             document.getElementById('backYesBtn').onclick = function() {
                 document.getElementById('orderForm').reset();
-                window.location.href = 'tyuumon.php';
+                window.location.href = 'order.php';
                 modal.remove();
             };
             document.getElementById('backNoBtn').onclick = function() {
@@ -515,7 +515,7 @@
         }
     });
 
-    // 注文画面(tyuumon.php)に遷移した際にalertを表示
+    // 注文画面(order.php)に遷移した際にalertを表示
 window.addEventListener('DOMContentLoaded', function() {
     const params = new URLSearchParams(window.location.search);
     // localStorageのフラグがある場合のみalertを表示

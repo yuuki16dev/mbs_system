@@ -17,7 +17,7 @@ $charset = 'utf8mb4';
 // GETパラメータからorder_idを取得
 $orderId = isset($_GET['no']) ? (int)$_GET['no'] : null;
 if (!$orderId) {
-    header('Location: tyuumonitiran.php');
+    header('Location: order_list.php');
     exit;
 }
 
@@ -34,7 +34,7 @@ try {
     $order = $stmt->fetch();
     if (!$order) {
         // データがなければ一覧にリダイレクト
-        header('Location: tyuumonitiran.php');
+        header('Location: order_list.php');
         exit;
     }
     // 注文明細取得（order_details）
@@ -43,7 +43,7 @@ try {
     $order_details = $stmt->fetchAll();
 } catch (Exception $e) {
     // エラー時は一覧にリダイレクト
-    header('Location: tyuumonitiran.php');
+    header('Location: order_list.php');
     exit;
 }
 ?>
@@ -316,7 +316,7 @@ try {
             </table>
         </form>
         <div class="control-buttons">
-            <button onclick="location.href='tyuumon_henshu.php?no=<?php echo $order['order_id']; ?>'">編集</button>
+            <button onclick="location.href='order_edit.php?no=<?php echo $order['order_id']; ?>'">編集</button>
             <button type="button" id="deleteBtn">削除</button>
         </div>
         <!-- 削除確認モーダル -->
@@ -329,7 +329,7 @@ try {
                 </div>
             </div>
         </div>
-        <a href="tyuumonitiran.php" class="back-button">戻る</a>
+        <a href="order_list.php" class="back-button">戻る</a>
         <div class="modal" id="confirmationModal"></div>
     </main>
 
@@ -355,11 +355,11 @@ try {
                     if (res.redirected) {
                         window.location.href = res.url;
                     } else {
-                        window.location.href = 'tyuumonitiran.php';
+                        window.location.href = 'order_list.php';
                     }
                 })
                 .catch(() => {
-                    window.location.href = 'tyuumonitiran.php';
+                    window.location.href = 'order_list.php';
                 });
         });
     });

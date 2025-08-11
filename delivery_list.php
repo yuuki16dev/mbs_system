@@ -123,53 +123,7 @@ if ($currentPage > $totalPages) $currentPage = $totalPages;
 $startIndex = ($currentPage - 1) * $perPage;
 $displayNotes = array_slice($filteredDeliveryNotes, $startIndex, $perPage);
 
-// 実際のデータベース接続の例 (コメント解除して使用する場合は、データベース設定を適切にしてください)
-/*
-function getDeliveryNotes($date = '', $term = '') {
-    // データベース接続情報
-    $host = 'localhost';
-    $db   = 'your_database_name';
-    $user = 'your_username';
-    $pass = 'your_password';
-    $charset = 'utf8mb4';
- 
-    $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
-    $options = [
-        PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
-        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-        PDO::ATTR_EMULATE_PREPARES   => false,
-    ];
- 
-    try {
-        $pdo = new PDO($dsn, $user, $pass, $options);
-    } catch (\PDOException $e) {
-        throw new \PDOException($e->getMessage(), (int)$e->getCode());
-    }
- 
-    $sql = "SELECT * FROM delivery_notes WHERE 1=1"; // true条件から開始
- 
-    $params = [];
- 
-    if (!empty($date)) {
-        $sql .= " AND order_date = :order_date"; // order_date はデータベースのカラム名に合わせる
-        $params[':order_date'] = $date;
-    }
-    if (!empty($term)) {
-        // delivery_note_no, customer_name, item_name はデータベースのカラム名に合わせる
-        $sql .= " AND (CAST(delivery_note_no AS CHAR) LIKE :term OR customer_name LIKE :term OR item_name LIKE :term)";
-        $params[':term'] = '%' . $term . '%'; // 部分一致の場合
-    }
- 
-    $sql .= " ORDER BY order_date DESC"; // 日付で降順ソート
- 
-    $stmt = $pdo->prepare($sql);
-    $stmt->execute($params);
-    return $stmt->fetchAll(PDO::FETCH_ASSOC);
-}
- 
-// 実際のアプリケーションでは、以下のようにデータを取得します
-// $filteredDeliveryNotes = getDeliveryNotes($searchDate, $searchTerm);
-*/
+
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -566,7 +520,7 @@ function getDeliveryNotes($date = '', $term = '') {
                 row.addEventListener('click', function() {
                     var no = this.getAttribute('data-no');
                     if (no && !isNaN(no)) {
-                        window.location.href = 'nouhinhyouji.php?no=' + encodeURIComponent(no);
+                        window.location.href = 'delivery_display.php?no=' + encodeURIComponent(no);
                     }
                 });
                 row.addEventListener('mouseenter', function() {

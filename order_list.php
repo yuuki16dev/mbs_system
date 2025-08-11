@@ -357,7 +357,7 @@ $displayNotes = array_slice($allDeliveryNotes, $startIndex, $perPage);
             </div>
         </form>
     </main>
-    <a href="tyuumon.php" class="back-button">戻る</a>
+    <a href="order.php" class="back-button">戻る</a>
     <div class="modal" id="confirmationModal">
         <div class="modal-content"></div>
     </div>
@@ -447,7 +447,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') return;
             var no = this.getAttribute('data-no');
             if(no) {
-                window.location.href = 'tyuumonhyouji.php?no=' + encodeURIComponent(no);
+                window.location.href = 'order_display.php?no=' + encodeURIComponent(no);
             }
         });
         row.addEventListener('mouseenter', function() {

@@ -19,15 +19,15 @@
 
     <!-- ナビゲーションメニュー -->
     <div class="nav-menu" id="navMenu">
-        <a href="tyuumon.php">注文書</a>
-        <a href="nouhin.php">納品書</a>
+        <a href="order.php">注文書</a>
+        <a href="delivery.php">納品書</a>
         <a href="toukei.php">統計情報</a>
         <a href="kokyaku.php">顧客情報管理</a>
     </div>
 
     <div class="button-container">
-        <a href="tyuumon.php" class="custom-width">注文書</a>
-        <a href="nouhin.php" class="custom-width">納品書</a>
+        <a href="order.php" class="custom-width">注文書</a>
+        <a href="delivery.php" class="custom-width">納品書</a>
         <a href="toukei.php" class="back-button">統計情報</a>
         <a href="kokyaku.php" class="back-button">顧客情報管理</a>
     </div>
