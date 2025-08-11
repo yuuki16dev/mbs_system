@@ -249,11 +249,6 @@ $displayNotes = array_slice($filteredDeliveryNotes, $startIndex, $perPage);
             background-color: #333;
             color: #ffffff;
         }
-
-
-
-
-
                 /* ソート可能な見出しのスタイル */
         .sortable {
             cursor: pointer;

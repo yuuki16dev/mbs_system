@@ -74,13 +74,6 @@ $displayNotes = array_slice($allDeliveryNotes, $startIndex, $perPage);
     <link rel="stylesheet" href="styles.css"> 
     <style>
         /* CSSスタイル */
-        body { 
-            font-family: Arial, sans-serif; 
-            margin: 0; 
-            padding: 0; 
-            background-color: #fff; 
-        }
-
         header { 
             background-color: #333; 
             color: #fff; 
