@@ -1,4 +1,5 @@
 <!-- navbar.php -->
+    <link rel="stylesheet" href="homestyle.css">
 <div class="hamburger" id="hamburger">
     <div></div>
     <div></div>

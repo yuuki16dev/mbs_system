@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ホーム画面</title>
-    <link rel="stylesheet" href="styles.css">  <!-- 共通のCSSファイル -->
+    <link rel="stylesheet" href="style.css">  <!-- 共通のCSSファイル -->
 </head>
 <body>
 
