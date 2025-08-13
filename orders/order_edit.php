@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>注文書編集</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
     <style>
         /* ...order_create.phpのスタイルをそのまま流用... */
         /* 基本スタイル */
@@ -286,7 +286,7 @@
         <!-- 画面タイトル -->
         <div class="home-title">注文編集</div>
     </header>
-    <?php include('navbar.php'); ?>
+    <?php include('../navbar.php'); ?>
     <?php
     // --- 注文No取得 ---
     $orderId = isset($_GET['no']) ? (int)$_GET['no'] : null;

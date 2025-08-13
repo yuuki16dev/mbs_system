@@ -153,17 +153,39 @@
     }
 
     /* フォーム全体のレイアウト */
-    .order-create-page .table-container,
-    .order-display-page .table-container {
-        margin: 0 auto;
-        width: 80%;
+        .order-create-page .table-container,
+        .order-display-page .table-container {
         display: flex;
         flex-direction: row;
+        flex-wrap: nowrap;
         justify-content: space-between;
-        margin-bottom: 20px;
-        margin-top: 60px;
         gap: 20px;
-    }
+        width: 80%;
+        min-width: 300px;
+        margin: 0 auto;
+        margin-bottom: 2px;
+        margin-top: 20px;
+        overflow-x: auto;
+        }
+
+        @media (max-width: 700px) {
+            .order-create-page .table-container,
+            .order-display-page .table-container {
+                width: 98vw;
+                min-width: 0;
+                gap: 10px;
+                padding: 0 2vw;
+                flex-wrap: nowrap;
+                overflow-x: auto;
+            }
+            .order-create-page .table-container > div,
+            .order-display-page .table-container > div {
+                flex-direction: row;
+                flex-wrap: nowrap;
+                gap: 8px;
+            }
+        }
+    
 
     .order-create-page .table-container > div,
     .order-display-page .table-container > div {
