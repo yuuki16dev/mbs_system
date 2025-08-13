@@ -71,194 +71,13 @@ $displayNotes = array_slice($allDeliveryNotes, $startIndex, $perPage);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>注文書一覧</title>
-    <link rel="stylesheet" href="styles.css"> 
+    <link rel="stylesheet" href="../style.css"> 
     <style>
-        /* CSSスタイル */
-        header { 
-            background-color: #333; 
-            color: #fff; 
-            padding: 15px 0; 
-            text-align: center; 
-        }
-
-        .home-title { font-size: 28px;
-            position: fixed;
-            top: 10px;
-            left: 20px;
-        }
-        main {
-            width: 90%;
-            margin: 20px auto;
-            padding: 20px;
-            /* background-color: #fff; 削除 */
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
-        }
- 
-        .search-bar {
-            margin: 0 auto;
-            width: 80%;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            margin-bottom: 20px;
-            margin-top: 60px;
-            gap: 20px;
-        }
-
-        .search-bar>div {
-            /* 日付と検索キーワードのグループ */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .search-bar input[type="number"],
-        .search-bar input[type="date"],
-        .search-bar input[type="text"] {
-            padding: 8px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            width: auto;
-        }
-
-        .search-bar button {
-            padding: 8px 15px;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .search-bar button:hover {
-            background-color: #0056b3;
-        }
-
- 
-        table {
-            border-collapse: collapse;
-            width: 90%;
-            margin: 20px 0;
-            background-color: #fff;
-        }
-        table, th, td { border: 1px solid #ddd; }
-        th, td { padding: 10px; text-align: center; }
-        th { background-color: #f2f2f2; }
- 
-        .pagination { text-align: center; margin-top: 10px; }
-        .pagination button {
-            margin: 0 10px;
-            padding: 6px 12px;
-            background-color: #333;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        .pagination button:hover { background-color: #555; }
-        .back-button {
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-            width: 50px;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            border: 2px solid #333;
-            border-radius: 5px;
-            background-color: #ffffff;
-            color: #333;
-            font-size: 14px;
-            transition: 0.3s;
-        }
-
-        .back-button:hover {
-            background-color: #333;
-            color: #ffffff;
-        }
-
-
-
-
-
-                /* ソート可能な見出しのスタイル */
-        .sortable {
-            cursor: pointer;
-            position: relative; /* ソートアイコンの位置調整のため */
-            /*display: flex;  テキストとアイコンを横並びにする */
-            justify-content: center; /* 中央揃え */
-            align-items: center; /* 垂直方向中央揃え */
-            padding-right: 20px; /* アイコン分のスペースを確保 */
-            white-space: nowrap; /* テキストとアイコンが改行されないように */
-        }
-
-        .sort-icon {
-            position: absolute;
-            right: 5px; /* 右端からの距離 */
-            top: 50px;
-            font-size: 20px; /* アイコンのサイズ */
-            color: black; /* デフォルトの色 */
-            /* transformとtransitionはテキスト切り替えのため削除 */
-            top: 50%; /* 親要素の中心に配置 */
-            display: block; /* 確実な表示のため */
-            line-height: 1; /* アイコンの行高さを調整 */
-        }
-
-        input[type="date"] {
-            width: 100px;
-            padding: 6px;
-            border-radius: 4px;
-            border: 1px solid #ccc;
-        }
-      
-        /* No.列 */
-        table th:nth-child(1),
-        table td:nth-child(1) {
-            width: 60px;
-            max-width: 60px;
-            white-space: nowrap;
-            text-align: center;
-        }
-
-        /* 顧客名列 */
-        table th:nth-child(3),
-        table td:nth-child(3),
-        /* 商品名列 */
-        table th:nth-child(4),
-        table td:nth-child(4) {
-            max-width: 200px;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        table {
-        margin-left: auto;
-        margin-right: auto;
-        }
-
-
-
-
-        .search-bar input[type="text"],
-        .search-bar button {
-        height: 38px;              /* 入力欄に近い高さ */
-        font-size: 14px;
-        padding: 0 12px;
-        box-sizing: border-box;
-        margin-top: 2px;           /* ちょっとだけ調整（必要に応じて） */
-        vertical-align: middle;
-        }
 
 
     </style>
 </head>
-<body>
+<body class="order-list-page">
     <header>
         <div class="home-title">注文書一覧</div>
         <div class="hamburger" id="hamburger-menu">
@@ -269,7 +88,7 @@ $displayNotes = array_slice($allDeliveryNotes, $startIndex, $perPage);
         <nav class="menu" id="menu-nav">
         </nav>
     </header>
-            <?php include('navbar.php'); ?>
+            <?php include('../navbar.php'); ?>
 
     <main>
         <form id="searchForm" method="get" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">

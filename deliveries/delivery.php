@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>納品書</title>
     <!-- 共通のCSSファイル -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
     <!-- ホーム画面タイトル -->

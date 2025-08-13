@@ -4,19 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>注文書作成</title>
-    <link rel="stylesheet" href="style.css">  <!-- 共通のCSSファイル -->
+    <link rel="stylesheet" href="../style.css">  <!-- 共通のCSSファイル -->
 </head>
-<body>
+<body class="order-create-page">
     <header>
         <div class="home-title">注文作成</div>
     </header>
-    <?php include('navbar.php'); ?>  <!-- 共通のナビゲーションバー（ハンバーガーメニュー）をインクルード -->
+    <?php include('../navbar.php'); ?>  <!-- 共通のナビゲーションバー（ハンバーガーメニュー）をインクルード -->
 
     <main>
         <form id="orderForm" method="post" action="submit_order.php">
             <!-- 顧客情報入力フォーム -->
             <table>
-                <div class="table-container">
+                <div class=" table-container">
                     
                     <div style="display: flex; align-items: center; gap: 10px ;">
                         <label for="date">日付:</label>
@@ -27,7 +27,7 @@
                         <label for="customer_no">顧客No</label>
                         <input type="number" min="0" id="customer_no" name="customer_id" readonly>
                     </div>
-                    <div class="name-row">
+                    <div class=" name-row">
                         <input type="text" id="name" name="name" autocomplete="off">
                         <label for="name">様</label>
                         <div id="nameSuggestions"></div>
@@ -47,37 +47,37 @@
                 <?php for ($i = 1; $i <= 10; $i++): ?>
                     <tr>
                         <td><?= $i ?></td>
-                            <td><input type="text" name="item_name[]" class="input-field"></td>
-                            <td><input type="number" min="0" name="quantity[]" class="input-field" oninput="calculateTotal()"></td>
-                            <td><input type="text" name="price[]" class="input-field" oninput="addYenSymbol(this); calculateTotal()"></td>
-                            <td><input type="text" name="remarks[]" class="input-field"></td>
+                            <td><input type="text" name="item_name[]" class=" input-field"></td>
+                            <td><input type="number" min="0" name="quantity[]" class=" input-field" oninput="calculateTotal()"></td>
+                            <td><input type="text" name="price[]" class=" input-field" oninput="addYenSymbol(this); calculateTotal()"></td>
+                            <td><input type="text" name="remarks[]" class=" input-field"></td>
                     </tr>
                 <?php endfor; ?>
                 </script>
                 <tr>
                     <td colspan="2">合計</td>
-                    <td colspan="1"><input type="text" name="total_quantity" class="input-field" readonly></td>
-                    <td colspan="1"><input type="text" name="grand_total" class="input-field" readonly></td>
+                    <td colspan="1"><input type="text" name="total_quantity" class=" input-field" readonly></td>
+                    <td colspan="1"><input type="text" name="grand_total" class=" input-field" readonly></td>
                 </tr>
                 <tr>
                     <td colspan="2">備考</td>
-                    <td colspan="3"><input type="text" name="notes" class="input-field"></td>
+                    <td colspan="3"><input type="text" name="notes" class=" input-field"></td>
                 </tr>
                 
             </table>
-            <div class="button-container">
-                <button type="button" class="button" onclick="showModal()">作成</button>
+            <div class=" button-container">
+                <button type="button" class=" button" onclick="showModal()">作成</button>
             </div>
         </form>
     </main>
 
-    <a href="order.php" class="back-button">戻る</a>
-    <div class="modal" id="confirmationModal" style="display:none;">
-        <div class="modal-content">
+    <a href="order.php" class=" back-button">戻る</a>
+    <div class=" modal" id="confirmationModal" style="display:none;">
+        <div class=" modal-content">
             <p>本当に作成しますか？</p>
-            <div class="modal-buttons">
-                <button class="cancel" type="button" onclick="closeModal()">いいえ</button>
-                <button class="confirm" type="button" onclick="submitForm()">はい</button>
+            <div class=" modal-buttons">
+                <button class=" cancel" type="button" onclick="closeModal()">いいえ</button>
+                <button class=" confirm" type="button" onclick="submitForm()">はい</button>
             </div>
         </div>
     </div>
