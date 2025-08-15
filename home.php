@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ホーム画面</title>
-    <link rel="stylesheet" href="styles.css">  <!-- 共通のCSSファイル -->
+    <link rel="stylesheet" href="style.css">  <!-- 共通のCSSファイル -->
 </head>
 <body>
 
@@ -19,15 +19,15 @@
 
     <!-- ナビゲーションメニュー -->
     <div class="nav-menu" id="navMenu">
-        <a href="order.php">注文書</a>
-        <a href="delivery.php">納品書</a>
+        <a href="orders/order.php">注文書</a>
+        <a href="deliveries/delivery.php">納品書</a>
         <a href="toukei.php">統計情報</a>
         <a href="kokyaku.php">顧客情報管理</a>
     </div>
 
     <div class="button-container">
-        <a href="order.php" class="custom-width">注文書</a>
-        <a href="delivery.php" class="custom-width">納品書</a>
+        <a href="orders/order.php" class="custom-width">注文書</a>
+        <a href="deliveries/delivery.php" class="custom-width">納品書</a>
         <a href="toukei.php" class="back-button">統計情報</a>
         <a href="kokyaku.php" class="back-button">顧客情報管理</a>
     </div>

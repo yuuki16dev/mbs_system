@@ -54,206 +54,15 @@ try {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>注文書表示</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #fff;
-        }
-
-        main {
-            width: 80%;
-            margin: 20px auto;
-            padding: 20px;
-            /* background-color: #fff; 削除 */
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
-        }
-
-        header {
-            display: block;
-            margin-bottom: 20px;
-        }
-
-        header h1 {
-            font-size: 28px;
-            margin: 0;
-            text-align: left;
-            margin-bottom: 10px;
-        }
-
-
-        /* フォーム全体のレイアウト */
-        .table-container {
-            margin: 0 auto;
-            width: 80%;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            margin-bottom: 20px;
-            margin-top: 60px;
-            gap: 20px;
-        }
-
-        .table-container>div {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .table-container label {
-            margin-bottom: 0;
-        }
-
-        .table-container input[type="number"],
-        .table-container input[type="date"],
-        .table-container input[type="text"] {
-            padding: 8px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            width: auto;
-            /* 幅を自動調整 */
-        }
-
-        .table-container label,
-        .table-container input {
-            margin-bottom: 30px;
-        }
-
-        .table-container input {
-            padding: 8px;
-            width: 40%;
-        }
-
-        .table-container input[type="date"] {
-            width: 60%;
-        }
-
-        /* テーブルの見た目 */
-        table {
-            border-collapse: collapse;
-            width: 100%;
-            margin: 20px 0;
-            background-color: #fff;
-        }
-
-        table,
-        th,
-        td {
-            border: 1px solid #ddd;
-        }
-
-        th,
-        td {
-            padding: 10px;
-            text-align: center;
-        }
-
-        th {
-            background-color: #f2f2f2;
-        }
-
-        .input-field {
-            width: 100%;
-            border: none;
-            background: none;
-            text-align: center;
-        }
-
-        table th:nth-child(1),
-        table td:nth-child(1) {
-            width: 50px;
-            max-width: 50px;
-            min-width: 30px;
-            white-space: nowrap;
-            text-align: center;
-        }
-
-        /* ==== ボタン共通スタイル ==== */
-        .button,
-        .create-button,
-        .confirm,
-        .back-button {
-            font-size: 16px;
-            padding: 25px 25px;
-            border-radius: 6px;
-            border: 2px solid #333;
-            cursor: pointer;
-            transition: 0.3s;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        /* ==== 副ボタン（キャンセル・戻る） ==== */
-        .cancel,
-        .back-button {
-            background-color: #fff;
-            color: #333;
-        }
-
-        /* 戻るボタンの位置調整 */
-        .back-button {
-            position: fixed;
-            bottom: 30px;
-            left: 20px;
-        }
-
-        .cancel:hover,
-        .back-button:hover {
-            background-color: #333;
-            color: #fff;
-        }
-
-        /* ==== ホバー効果 ==== */
-        .button:hover,
-        .create-button:hover,
-        .confirm:hover {
-            background-color: rgb(19, 207, 19);
-            color: #fff;
-        }
-
-        .control-buttons {
-            position: absolute;
-            right: 8px;
-            top: 200px;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .control-buttons button {
-            padding: 20px 40px;
-            font-size: 24px;
-            border: 2px solid #333;
-            background-color: #fff;
-            cursor: pointer;
-            border-radius: 8px;
-        }
-
-        .control-buttons button:hover {
-            background-color: #333;
-            color: white;
-        }
-
-
-
-        .note {
-            margin-top: 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="../style.css">
 </head>
 
-<body>
+<body class="order-display-page">
     <header>
         <div class="home-title">注文書表示</div>
     </header>
 
-    <?php include('navbar.php'); ?>
+    <?php include('../navbar.php'); ?>
 
     <main>
         <!-- 注文書の情報を表示（作成画面と同じレイアウト） -->
@@ -334,7 +143,7 @@ try {
     </main>
 
 
-    <script src="script.js"></script>
+    <script src="../script.js"></script>
     <script>
     // 削除ボタンのモーダル制御
     document.addEventListener('DOMContentLoaded', function() {
