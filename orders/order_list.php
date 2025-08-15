@@ -169,7 +169,7 @@ $displayNotes = array_slice($allDeliveryNotes, $startIndex, $perPage);
     <div class="modal" id="confirmationModal">
         <div class="modal-content"></div>
     </div>
- <script src="script.js"></script>
+ <script src="../script.js"></script>
     
 <script>
     // DOMコンテンツが完全に読み込まれた後に実行

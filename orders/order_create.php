@@ -16,9 +16,8 @@
         <form id="orderForm" method="post" action="submit_order.php">
             <!-- 顧客情報入力フォーム -->
             <table>
-                <div class=" table-container">
-                    
-                    <div style="display: flex; align-items: center; gap: 10px ;">
+                <div class="table-container">
+                    <div style="display: flex; align-items: center; gap: 10px;">
                         <label for="date">日付:</label>
                         <input type="date" id="date" name="date">
                     </div>
@@ -38,7 +37,6 @@
             <!-- 注文内容のテーブル -->
 
                 <tr>
-                    
                     <th colspan="2">商品名</th>
                     <th>数量</th>
                     <th>単価</th>
@@ -47,21 +45,20 @@
                 <?php for ($i = 1; $i <= 10; $i++): ?>
                     <tr>
                         <td><?= $i ?></td>
-                            <td><input type="text" name="item_name[]" class=" input-field"></td>
-                            <td><input type="number" min="0" name="quantity[]" class=" input-field" oninput="calculateTotal()"></td>
-                            <td><input type="text" name="price[]" class=" input-field" oninput="addYenSymbol(this); calculateTotal()"></td>
-                            <td><input type="text" name="remarks[]" class=" input-field"></td>
+                            <td><input type="text" name="item_name[]" class="input-field"></td>
+                            <td><input type="number" min="0" name="quantity[]" class="input-field" oninput="calculateTotal()"></td>
+                            <td><input type="text" name="price[]" class="input-field" oninput="addYenSymbol(this); calculateTotal()"></td>
+                            <td><input type="text" name="remarks[]" class="input-field"></td>
                     </tr>
                 <?php endfor; ?>
-                </script>
                 <tr>
                     <td colspan="2">合計</td>
-                    <td colspan="1"><input type="text" name="total_quantity" class=" input-field" readonly></td>
-                    <td colspan="1"><input type="text" name="grand_total" class=" input-field" readonly></td>
+                    <td colspan="1"><input type="text" name="total_quantity" class="input-field" readonly></td>
+                    <td colspan="1"><input type="text" name="grand_total" class="input-field" readonly></td>
                 </tr>
                 <tr>
                     <td colspan="2">備考</td>
-                    <td colspan="3"><input type="text" name="notes" class=" input-field"></td>
+                    <td colspan="3"><input type="text" name="notes" class="input-field"></td>
                 </tr>
                 
             </table>
@@ -82,7 +79,7 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="../script.js"></script>
 
     <script>
     // =============================

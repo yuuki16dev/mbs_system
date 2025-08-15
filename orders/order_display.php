@@ -143,7 +143,7 @@ try {
     </main>
 
 
-    <script src="script.js"></script>
+    <script src="../script.js"></script>
     <script>
     // 削除ボタンのモーダル制御
     document.addEventListener('DOMContentLoaded', function() {

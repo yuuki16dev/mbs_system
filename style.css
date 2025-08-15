@@ -127,6 +127,7 @@
 
     /* .order-create-pageのcss */
     .order-create-page .menu-button,
+    .order-edit-page .menu-button,
     .order-display-page .menu-button {
         font-size: 24px;
         background: none;
@@ -134,16 +135,18 @@
         cursor: pointer;
     }
     
-        .order-create-page body,
-        .order-display-page body {
+        body.order-create-page,
+        body.order-edit-page,
+        body.order-display-page {
         font-family: Arial, sans-serif;
         margin: 0;
         padding: 0;
         background-color: #fff;
     }
 
-    .order-create-page main,
-    .order-display-page main {
+        body.order-create-page main,
+        body.order-edit-page main,
+        body.order-display-page main {
         width: 80%;
         margin: 20px auto;
         padding: 20px;
@@ -153,8 +156,9 @@
     }
 
     /* フォーム全体のレイアウト */
-        .order-create-page .table-container,
-        .order-display-page .table-container {
+    body.order-create-page .table-container,
+    body.order-edit-page .table-container,
+    body.order-display-page .table-container {
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
@@ -170,6 +174,7 @@
 
         @media (max-width: 700px) {
             .order-create-page .table-container,
+            .order-edit-page .table-container,
             .order-display-page .table-container {
                 width: 98vw;
                 min-width: 0;
@@ -179,6 +184,7 @@
                 overflow-x: auto;
             }
             .order-create-page .table-container > div,
+            .order-edit-page .table-container > div,
             .order-display-page .table-container > div {
                 flex-direction: row;
                 flex-wrap: nowrap;
@@ -187,64 +193,78 @@
         }
     
 
-    .order-create-page .table-container > div,
-    .order-display-page .table-container > div {
+    body.order-create-page .table-container > div,
+    body.order-edit-page .table-container > div,
+    body.order-display-page .table-container > div {
         display: flex;
         flex-direction: row;
         align-items: center;
         gap: 10px;
     }
 
-    .order-create-page .table-container label,
-    .order-display-page .table-container label { margin-bottom: 0; }
-    .order-create-page .table-container input[type="number"],
-    .order-display-page .table-container input[type="number"],
-    .order-create-page .table-container input[type="date"],
-    .order-display-page .table-container input[type="date"],
-    .order-create-page .table-container input[type="text"],
-    .order-display-page .table-container input[type="text"] {
+    body.order-create-page .table-container label,
+    body.order-edit-page .table-container label,
+    body.order-display-page .table-container label { margin-bottom: 0; }
+    body.order-create-page .table-container input[type="number"],
+    body.order-edit-page .table-container input[type="number"],
+    body.order-display-page .table-container input[type="number"],
+    body.order-create-page .table-container input[type="date"],
+    body.order-edit-page .table-container input[type="date"],
+    body.order-display-page .table-container input[type="date"],
+    body.order-create-page .table-container input[type="text"],
+    body.order-edit-page .table-container input[type="text"],
+    body.order-display-page .table-container input[type="text"] {
         padding: 8px;
         border: 1px solid #ccc;
         border-radius: 4px;
         width: auto; /* 幅を自動調整 */
     }
 
-    .order-create-page .table-container label,
-    .order-display-page .table-container label,
-    .order-create-page .table-container input,
-    .order-display-page .table-container input {
+    body.order-create-page .table-container label,
+    body.order-edit-page .table-container label,
+    body.order-display-page .table-container label,
+    body.order-create-page .table-container input,
+    body.order-edit-page .table-container input,
+    body.order-display-page .table-container input {
         margin-bottom: 30px;
     }
 
-    .order-create-page .table-container input,
-    .order-display-page .table-container input {
+    body.order-create-page .table-container input,
+    body.order-edit-page .table-container input,
+    body.order-display-page .table-container input {
         padding: 8px;
         width: 40%;
     }
 
-    .order-create-page .table-container input[type="date"],
-    .order-display-page .table-container input[type="date"] {
+    body.order-create-page .table-container input[type="date"],
+    body.order-edit-page .table-container input[type="date"],
+    body.order-display-page .table-container input[type="date"] {
         width: 60%;
     }
 
     /* テーブルの見た目 */
-    .order-create-page table,
-    .order-display-page table {
+    body.order-create-page table,
+    body.order-edit-page table,
+    body.order-display-page table {
         border-collapse: collapse;
         width: 100%;
         margin: 20px 0;
         background-color: #fff;
     }
 
-    .order-create-page table, th, td,
-    .order-display-page table, th, td { border: 1px solid #ddd; }
-    .order-create-page th, td,
-    .order-display-page th, td { padding: 10px; text-align: center; }
-    .order-create-page th,
-    .order-display-page th { background-color: #f2f2f2; }
+    body.order-create-page table, th, td,
+    body.order-edit-page table, th, td,
+    body.order-display-page table, th, td { border: 1px solid #ddd; }
+    body.order-create-page th, td,
+    body.order-edit-page th, td,
+    body.order-display-page th, td { padding: 10px; text-align: center; }
+    body.order-create-page th,
+    body.order-edit-page th,
+    body.order-display-page th { background-color: #f2f2f2; }
 
-    .order-create-page .input-field,
-    .order-display-page .input-field {
+    body.order-create-page .input-field,
+    body.order-edit-page .input-field,
+    body.order-display-page .input-field {
         width: 100%;
         border: none;
         background: none;
@@ -252,16 +272,21 @@
     }
 
     /* ==== ボタン共通スタイル ==== */
-    .order-create-page .button,
-    .order-display-page .button,
-    .order-create-page .create-button,
-    .order-display-page .create-button,
-    .order-create-page .confirm,
-    .order-display-page .confirm,
-    .order-create-page .cancel,
-    .order-display-page .cancel,
-    .order-create-page .back-button,
-    .order-display-page .back-button {
+    body.order-create-page .button,
+    body.order-edit-page .button,
+    body.order-display-page .button,
+    body.order-create-page .create-button,
+    body.order-edit-page .create-button,
+    body.order-display-page .create-button,
+    body.order-create-page .confirm,
+    body.order-edit-page .confirm,
+    body.order-display-page .confirm,
+    body.order-create-page .cancel,
+    body.order-edit-page .cancel,
+    body.order-display-page .cancel,
+    body.order-create-page .back-button,
+    body.order-edit-page .back-button,
+    body.order-display-page .back-button {
         font-size: 16px;
         padding: 25px 25px;
         border-radius: 6px;
@@ -275,55 +300,67 @@
     }
 
     /* ==== 主ボタン（作成・はい） ==== */
-    .order-create-page .button,
-    .order-display-page .button,
-    .order-create-page .create-button,
-    .order-display-page .create-button,
-    .order-create-page .confirm,
-    .order-display-page .confirm {
+    body.order-create-page .button,
+    body.order-edit-page .button,
+    body.order-display-page .button,
+    body.order-create-page .create-button,
+    body.order-edit-page .create-button,
+    body.order-display-page .create-button,
+    body.order-create-page .confirm,
+    body.order-edit-page .confirm,
+    body.order-display-page .confirm {
         background-color: #fff;
         color: #333;
     }
 
     /* ==== 副ボタン（キャンセル・戻る） ==== */
-    .order-create-page .cancel,
-    .order-display-page .cancel,
-    .order-create-page .back-button,
-    .order-display-page .back-button {
+    body.order-create-page .cancel,
+    body.order-edit-page .cancel,
+    body.order-display-page .cancel,
+    body.order-create-page .back-button,
+    body.order-edit-page .back-button,
+    body.order-display-page .back-button {
         background-color: #fff;
         color: #333;
     }
 
     /* ==== ホバー効果 ==== */
-    .order-create-page .button:hover,
-    .order-display-page .button:hover,
-    .order-create-page .create-button:hover,
-    .order-display-page .create-button:hover,
-    .order-create-page .confirm:hover,
-    .order-display-page .confirm:hover {
+    body.order-create-page .button:hover,
+    body.order-edit-page .button:hover,
+    body.order-display-page .button:hover,
+    body.order-create-page .create-button:hover,
+    body.order-edit-page .create-button:hover,
+    body.order-display-page .create-button:hover,
+    body.order-create-page .confirm:hover,
+    body.order-edit-page .confirm:hover,
+    body.order-display-page .confirm:hover {
         background-color: rgb(19, 207, 19);
         color: #fff;
     }
 
-    .order-create-page .cancel:hover,
-    .order-display-page .cancel:hover,
-    .order-create-page .back-button:hover,
-    .order-display-page .back-button:hover {
+    body.order-create-page .cancel:hover,
+    body.order-edit-page .cancel:hover,
+    body.order-display-page .cancel:hover,
+    body.order-create-page .back-button:hover,
+    body.order-edit-page .back-button:hover,
+    body.order-display-page .back-button:hover {
         background-color: #333;
         color: #fff;
     }
 
     /* 作成ボタンの固定配置 */
-    .order-create-page .button-container,
-    .order-display-page .button-container {
+    body.order-create-page .button-container,
+    body.order-edit-page .button-container,
+    body.order-display-page .button-container {
         position: fixed;
         bottom: 30px;
         right: 20px;
     }
 
     /* モーダル背景 */
-    .order-create-page .modal,
-    .order-display-page .modal {
+    body.order-create-page .modal,
+    body.order-edit-page .modal,
+    body.order-display-page .modal {
         display: none;
         position: fixed;
         top: 0;
@@ -336,8 +373,9 @@
     }
 
     /* モーダル本体 */
-    .order-create-page .modal-content,
-    .order-display-page .modal-content {
+    body.order-create-page .modal-content,
+    body.order-edit-page .modal-content,
+    body.order-display-page .modal-content {
         background: #fff;
         padding: 20px;
         border-radius: 5px;
@@ -345,13 +383,15 @@
         width: 300px;
     }
 
-    .order-create-page .modal-content p,
-    .order-display-page .modal-content p {
+    body.order-create-page .modal-content p,
+    body.order-edit-page .modal-content p,
+    body.order-display-page .modal-content p {
         margin: 20px 0;
     }
 
-    .order-create-page .modal-buttons,
-    .order-display-page .modal-buttons {
+    body.order-create-page .modal-buttons,
+    body.order-edit-page .modal-buttons,
+    body.order-display-page .modal-buttons {
         display: flex;
         justify-content: center;
         gap: 30px;
@@ -359,8 +399,10 @@
     }
 
     .order-create-page .modal-buttons .confirm,
+    .order-edit-page .modal-buttons .confirm,
     .order-display-page .modal-buttons .confirm,
     .order-create-page .modal-buttons .cancel,
+    .order-edit-page .modal-buttons .cancel,
     .order-display-page .modal-buttons .cancel {
         font-size: 1.2em;
         padding: 12px 36px;
@@ -373,28 +415,33 @@
     }
 
     .order-create-page .modal-buttons .confirm,
+    .order-edit-page .modal-buttons .confirm,
     .order-display-page .modal-buttons .confirm {
         background: #28a745;
         box-shadow: 0 2px 8px rgba(40,167,69,0.15);
     }
 
     .order-create-page .modal-buttons .confirm:hover,
+    .order-edit-page .modal-buttons .confirm:hover,
     .order-display-page .modal-buttons .confirm:hover {
         background: #218838;
     }
 
     .order-create-page .modal-buttons .cancel,
+    .order-edit-page .modal-buttons .cancel,
     .order-display-page .modal-buttons .cancel {
         background: #6c757d;
     }
 
     .order-create-page .modal-buttons .cancel:hover,
+    .order-edit-page .modal-buttons .cancel:hover,
     .order-display-page .modal-buttons .cancel:hover {
         background: #495057;
     }
 
     /* 戻るボタンの位置調整 */
     .order-create-page .back-button,
+    .order-edit-page .back-button,
     .order-display-page .back-button {
         position: fixed;
         bottom: 30px;
@@ -403,6 +450,7 @@
 
         /* 名前入力欄と「様」を横並びに */
     .order-create-page .name-row,
+    .order-edit-page .name-row,
     .order-display-page .name-row {
         display: flex;
         align-items: center;
@@ -411,6 +459,7 @@
     }
 
     .order-create-page .search-bar,
+    .order-edit-page .search-bar,
     .order-display-page .search-bar {
         display: flex;
         justify-content: center;
@@ -419,6 +468,7 @@
         gap: 20px; /* 要素間の隙間 */
     }
     .order-create-page .search-bar > div,
+    .order-edit-page .search-bar > div,
     .order-display-page .search-bar > div { /* 日付と検索キーワードのグループ */
         display: flex;
         justify-content: center;
@@ -446,7 +496,9 @@
         cursor: pointer;
         transition: background-color 0.3s ease;
     }
-    .order-create-page .search-bar button:hover { background-color: #0056b3; }
+    .order-create-page .search-bar button:hover {
+        background-color: #0056b3;
+    }
 
     .order-create-page #name {
         width: 250px;
@@ -671,4 +723,44 @@
     .control-buttons button:hover {
         background-color: #333;
         color: white;
+    }
+
+    
+    /* フォーム全体のレイアウト */
+    .order-edit-page .table-container {
+        margin: 0 auto;
+        width: 80%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        margin-top: 60px;
+        gap: 20px;
+    }
+
+    .order-edit-page #name {
+        width: 250px;
+        padding: 6px 8px;
+        font-size: 1.1em;
+    }
+
+    .order-edit-page #nameSuggestions {
+        position: absolute;
+        top: 36px; /* 入力欄の下に表示 */
+        left: 0;
+        width: 250px;
+        background: #fff;
+        border: 1px solid #ccc;
+        z-index: 10;
+        max-height: 150px;
+        overflow-y: auto;
+    }
+
+    .order-edit-page #nameSuggestions div {
+        padding: 8px 12px;
+        border-bottom: 1px solid #eee;
+        cursor: pointer;
+    }
+    .order-edit-page #nameSuggestions div:hover {
+        background: #e0f7fa;
     }

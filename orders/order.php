@@ -38,7 +38,7 @@
         <div class="modal-content"></div>
 
 
-    <script src="script.js"></script>  <!-- 共通のJavaScriptファイル -->
+    <script src="../script.js"></script>  <!-- 共通のJavaScriptファイル -->
     <script>
         window.addEventListener('DOMContentLoaded', function() {
             const params = new URLSearchParams(window.location.search);
