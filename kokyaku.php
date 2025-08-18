@@ -92,7 +92,7 @@ try {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>顧客情報管理</title>
-    <link rel="stylesheet" href="styles.css"> <!-- 共通のCSSファイル -->
+    <link rel="stylesheet" href="style.css"> <!-- 共通のCSSファイル -->
     <style>
         .menu-button {
             font-size: 24px;

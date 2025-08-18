@@ -65,6 +65,7 @@ if ($currentPage > $totalPages) $currentPage = $totalPages;
 $startIndex = ($currentPage - 1) * $perPage;
 $displayNotes = array_slice($allDeliveryNotes, $startIndex, $perPage);
 ?>
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -103,18 +104,18 @@ $displayNotes = array_slice($allDeliveryNotes, $startIndex, $perPage);
                 <thead>
                     <tr>
                         <th class="sortable" data-column="0">
-        No.
-        <?php
-        // ソート順をトグルするためのURL生成
-        $nextSort = ($sortOrder === 'asc') ? 'desc' : 'asc';
-        $sortQuery = $_GET;
-        $sortQuery['sort'] = $nextSort;
-        $sortQuery['page'] = 1; // ソート時は1ページ目に戻す
-        $sortUrl = htmlspecialchars($_SERVER['PHP_SELF']) . '?' . http_build_query($sortQuery);
-        ?>
-        <a href="<?php echo $sortUrl; ?>">
-            <button type="button" id="sortNoBtn"><?php echo $sortOrder === 'asc' ? '▲' : '▼'; ?></button>
-        </a>
+                            No.
+                            <?php
+                            // ソート順をトグルするためのURL生成
+                            $nextSort = ($sortOrder === 'asc') ? 'desc' : 'asc';
+                            $sortQuery = $_GET;
+                            $sortQuery['sort'] = $nextSort;
+                            $sortQuery['page'] = 1; // ソート時は1ページ目に戻す
+                            $sortUrl = htmlspecialchars($_SERVER['PHP_SELF']) . '?' . http_build_query($sortQuery);
+                            ?>
+                            <a href="<?php echo $sortUrl; ?>">
+                                <button type="button" id="sortNoBtn"><?php echo $sortOrder === 'asc' ? '▲' : '▼'; ?></button>
+                            </a>
                         </th>
                         <th>注文日</th>
                         <th>顧客名</th>

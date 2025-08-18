@@ -457,7 +457,7 @@ table th:nth-child(5) {
  </h1>
 
  <!-- ナビゲーションバーの読み込み -->
- <?php include('navbar.php'); ?>
+ <?php include('../navbar.php'); ?>
 
  <!-- 納品書作成フォーム -->
  <form id="createForm" method="post" action="submit_nouhin.php">
@@ -547,7 +547,7 @@ table th:nth-child(5) {
 <button type="button" class="back-button" onclick="showBackModal()"><span style="writing-mode:horizontal-tb;text-orientation:mixed;display:inline-block;transform:rotate(0deg);white-space:nowrap;">戻る</span></button>
 
 <!-- 共通のJavaScriptファイル読み込み -->
-<script src="script.js"></script>
+<script src="../script.js"></script>
  <script>
     // 顧客名検索ボタン押下時の処理
     function searchCustomer() {
@@ -562,7 +562,7 @@ table th:nth-child(5) {
       searchMsg.textContent = '';
 
       if (name !== "") {
-        fetch('customer_suggest.php?keyword=' + encodeURIComponent(name))
+        fetch('../customer_suggest.php?keyword=' + encodeURIComponent(name))
           .then(res => res.json())
           .then(matches => {
             if (matches.length > 0) {

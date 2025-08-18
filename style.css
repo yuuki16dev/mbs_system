@@ -528,19 +528,19 @@
     }
 
     /* order-list-pageのcss */
-    .order-list-page header { 
+    .order-list-page header, .delivery-list-page header { 
         background-color: #333; 
         color: #fff; 
         padding: 15px 0; 
         text-align: center; 
     }
 
-    .order-list-page .home-title { font-size: 28px;
+    .order-list-page .home-title, .delivery-list-page .home-title { font-size: 28px;
         position: fixed;
         top: 10px;
         left: 20px;
     }
-    .order-list-page main {
+    .order-list-page main, .delivery-list-page main {
         width: 90%;
         margin: 20px auto;
         padding: 20px;
@@ -549,7 +549,7 @@
         box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
     }
 
-    .order-list-page .search-bar {
+    .order-list-page .search-bar, .delivery-list-page .search-bar {
         margin: 0 auto;
         width: 80%;
         display: flex;
@@ -560,7 +560,7 @@
         gap: 20px;
     }
 
-    .order-list-page .search-bar>div {
+    .order-list-page .search-bar>div, .delivery-list-page .search-bar>div {
         /* 日付と検索キーワードのグループ */
         display: flex;
         justify-content: center;
@@ -570,14 +570,17 @@
 
     .order-list-page .search-bar input[type="number"],
     .order-list-page .search-bar input[type="date"],
-    .order-list-page .search-bar input[type="text"] {
+    .order-list-page .search-bar input[type="text"],
+    .delivery-list-page .search-bar input[type="number"],
+    .delivery-list-page .search-bar input[type="date"],
+    .delivery-list-page .search-bar input[type="text"] {
         padding: 8px;
         border: 1px solid #ccc;
         border-radius: 4px;
         width: auto;
     }
 
-    .order-list-page .search-bar button {
+    .order-list-page .search-bar button, .delivery-list-page .search-bar button {
         padding: 8px 15px;
         background-color: #007bff;
         color: #fff;
@@ -587,23 +590,23 @@
         transition: background-color 0.3s ease;
     }
 
-    .order-list-page .search-bar button:hover {
+    .order-list-page .search-bar button:hover, .delivery-list-page .search-bar button:hover {
         background-color: #0056b3;
     }
 
 
-    .order-list-page table {
+    .order-list-page table, .delivery-list-page table {
         border-collapse: collapse;
         width: 90%;
         margin: 20px 0;
         background-color: #fff;
     }
-    .order-list-page table, th, td { border: 1px solid #ddd; }
-    .order-list-page th, td { padding: 10px; text-align: center; }
-    .order-list-page th { background-color: #f2f2f2; }
+    .order-list-page table, th, td, .delivery-list-page table, th, td { border: 1px solid #ddd; }
+    .order-list-page th, td, .delivery-list-page th, td { padding: 10px; text-align: center; }
+    .order-list-page th, .delivery-list-page th { background-color: #f2f2f2; }
 
-    .order-list-page .pagination { text-align: center; margin-top: 10px; }
-    .order-list-page .pagination button {
+    .order-list-page .pagination, .delivery-list-page .pagination { text-align: center; margin-top: 10px; }
+    .order-list-page .pagination button, .delivery-list-page .pagination button {
         margin: 0 10px;
         padding: 6px 12px;
         background-color: #333;
@@ -612,8 +615,8 @@
         border-radius: 4px;
         cursor: pointer;
     }
-    .order-list-page .pagination button:hover { background-color: #555; }
-    .order-list-page .back-button {
+    .order-list-page .pagination button:hover, .delivery-list-page .pagination button:hover { background-color: #555; }
+    .order-list-page .back-button, .delivery-list-page .back-button {
         position: fixed;
         bottom: 20px;
         left: 20px;
@@ -631,13 +634,12 @@
         transition: 0.3s;
     }
 
-    .order-list-page .back-button:hover {
+    .order-list-page .back-button:hover, .delivery-list-page .back-button:hover {
         background-color: #333;
         color: #ffffff;
     }
 
-            /* ソート可能な見出しのスタイル */
-    .order-list-page .sortable {
+    .order-list-page .sortable, .delivery-list-page .sortable {
         cursor: pointer;
         position: relative; /* ソートアイコンの位置調整のため */
         /*display: flex;  テキストとアイコンを横並びにする */
@@ -647,7 +649,7 @@
         white-space: nowrap; /* テキストとアイコンが改行されないように */
     }
 
-    .order-list-page .sort-icon {
+    .order-list-page .sort-icon, .delivery-list-page .sort-icon {
         position: absolute;
         right: 5px; /* 右端からの距離 */
         top: 50px;
@@ -659,41 +661,47 @@
         line-height: 1; /* アイコンの行高さを調整 */
     }
 
-    .order-list-page input[type="date"] {
+    .order-list-page input[type="date"], .delivery-list-page input[type="date"] {
         width: 100px;
         padding: 6px;
         border-radius: 4px;
         border: 1px solid #ccc;
     }
     
-    /* No.列 */
     .order-list-page table th:nth-child(1),
-    .order-list-page table td:nth-child(1) {
-        width: 60px;
-        max-width: 60px;
-        white-space: nowrap;
-        text-align: center;
-    }
+    .order-list-page table td:nth-child(1),
+    .delivery-list-page table th:nth-child(1),
+    .delivery-list-page table td:nth-child(1) {
+            width: 60px;
+            max-width: 60px;
+            white-space: nowrap;
+            text-align: center;
+        }
 
-    /* 顧客名列 */
     .order-list-page table th:nth-child(3),
     .order-list-page table td:nth-child(3),
+    .delivery-list-page table th:nth-child(3),
+    .delivery-list-page table td:nth-child(3),
     /* 商品名列 */
     .order-list-page table th:nth-child(4),
-    .order-list-page table td:nth-child(4) {
-        max-width: 200px;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
+    .order-list-page table td:nth-child(4),
+    .delivery-list-page table th:nth-child(4),
+    .delivery-list-page table td:nth-child(4) {
+            max-width: 200px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
 
-    .order-list-page table {
+    .order-list-page table, .delivery-list-page table {
     margin-left: auto;
     margin-right: auto;
     }
 
     .order-list-page .search-bar input[type="text"],
-    .order-list-page .search-bar button {
+    .order-list-page .search-bar button,
+    .delivery-list-page .search-bar input[type="text"],
+    .delivery-list-page .search-bar button {
     height: 38px;              /* 入力欄に近い高さ */
     font-size: 14px;
     padding: 0 12px;
